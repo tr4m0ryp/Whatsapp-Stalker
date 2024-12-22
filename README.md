@@ -32,7 +32,7 @@ This script monitors the online status of a specific contact on WhatsApp Web and
 5. **Run the Script**:
    - Launch the script:
      ```bash
-     python whatsapp_status_logger.py
+     python main.py
      ```
    - Open WhatsApp Web in Chrome and scan the QR code to log in.
    - Once logged in, press Enter in the terminal to start monitoring.
