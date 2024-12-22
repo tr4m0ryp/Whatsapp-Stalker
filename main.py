@@ -7,7 +7,7 @@ from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-CHROMEDRIVER_PATH = r"C:\######\chromedriver.exe" #here your chromedriver path
+CHROMEDRIVER_PATH = r"C:\path\to\chromedriver.exe" #here your chromedriver path
 CONTACT_NAME = "contact_name" #here the person you would love to stalk
 CHECK_INTERVAL = 5
 
