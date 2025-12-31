@@ -68,8 +68,8 @@ if ! command -v chromedriver &> /dev/null && [ ! -f "/usr/local/bin/chromedriver
     echo "Downloading ChromeDriver..."
 
     cd "$TEMP_DIR"
-    # Get compatible ChromeDriver version for High Sierra (older version)
-    curl -L -o chromedriver.zip "https://chromedriver.storage.googleapis.com/2.41/chromedriver_mac64.zip"
+    # Get compatible ChromeDriver version for High Sierra (version 103 - last version for macOS 10.13)
+    curl -L -o chromedriver.zip "https://chromedriver.storage.googleapis.com/103.0.5060.134/chromedriver_mac64.zip"
 
     echo "📦 Extracting ChromeDriver..."
     unzip -q chromedriver.zip

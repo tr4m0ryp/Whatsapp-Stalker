@@ -125,10 +125,26 @@ def get_contact_status(driver, contact_name):
 
 service = Service(CHROMEDRIVER_PATH)
 options = webdriver.ChromeOptions()
+
+# Try to find Chromium binary
+chromium_paths = [
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+]
+
+for chromium_path in chromium_paths:
+    if os.path.exists(chromium_path):
+        options.binary_location = chromium_path
+        print(f"Using browser at: {chromium_path}")
+        break
+
 options.add_argument("--start-maximized")
 options.add_argument("--disable-background-timer-throttling")
 options.add_argument("--disable-backgrounding-occluded-windows")
 options.add_argument("--disable-renderer-backgrounding")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
 driver = webdriver.Chrome(service=service, options=options)
 
 driver.get('https://web.whatsapp.com/')
