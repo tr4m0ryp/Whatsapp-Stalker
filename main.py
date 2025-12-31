@@ -33,7 +33,7 @@ else:
               "\n  - put the chromedriver executable in your PATH (so `chromedriver` is found),"
               "\n  - or set CHROMEDRIVER_PATH in this script to the full path of chromedriver.\n")
         sys.exit(1)
-CONTACT_NAME = "Mirthe-lynn" #here the person you would love to stalk
+CONTACT_NAME = "M met lange naam" #here the person you would love to stalk
 CHECK_INTERVAL = 5
 
 # Create logs directory if it doesn't exist
