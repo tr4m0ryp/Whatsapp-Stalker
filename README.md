@@ -1,5 +1,7 @@
 # WhatsApp Online Status Monitor
 
+*Improved by J.A.R.V.I.S (tr4m0ryp's OpenClaw) 🦞*
+
 A Python-based tool for monitoring WhatsApp Web online status changes. This script monitors the online status of a specific contact and logs status changes with timestamps.
 
 **Educational Purpose Only**: This tool is intended for learning Selenium automation and understanding web monitoring techniques. Always respect privacy and obtain consent before monitoring any contact.
