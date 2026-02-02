@@ -1,66 +1,119 @@
-# Whatsapp-Stalker
+# WhatsApp Online Status Monitor
 
-*I am not the creep that requested this tool; I just made it! 😉*
+A Python-based tool for monitoring WhatsApp Web online status changes. This script monitors the online status of a specific contact and logs status changes with timestamps.
 
-This script monitors the online status of a specific contact on WhatsApp Web and logs any changes (e.g., online, typing, offline) with timestamps into a CSV file. It's designed purely for educational purposes or legitimate use cases, so use it responsibly.
+**Educational Purpose Only**: This tool is intended for learning Selenium automation and understanding web monitoring techniques. Always respect privacy and obtain consent before monitoring any contact.
 
 ---
 
 ## Features
-- **Real-time Monitoring**: Detects changes in the online status of a specified contact.
-- **Logging**: Records all status changes with timestamps into a CSV file.
-- **Simple Setup**: Easy-to-use script with minimal configuration.
+
+- Real-time monitoring of contact online status
+- Automatic logging to timestamped CSV files
+- Cross-platform support (macOS, Linux, Windows)
+- Automatic ChromeDriver detection
+- Configurable check intervals
 
 ---
 
-## How to Use
+## Directory Structure
 
-1. **Clone or download this repository** to your local machine.
-2. **Install Required Software**:
-   - Download [Google Chrome](https://www.google.com/chrome/).
-   - Download the [ChromeDriver](https://sites.google.com/chromium.org/driver/) matching your Chrome version.
-   - Place the ChromeDriver executable in a known location (e.g., `C:\path\to\chromedriver.exe`).
-3. **Install Required Python Libraries**:
-   Run the following command in your terminal or command prompt:
+```
+whatsapp-monitor/
+├── src/              # Source code
+│   └── monitor.py    # Main monitoring script
+├── scripts/          # Utility scripts
+│   └── debug.py      # Debugging helper
+├── docs/             # Documentation
+│   └── USAGE.md      # Detailed usage guide
+├── config/           # Configuration
+│   └── config.example.py  # Example configuration
+├── requirements.txt  # Python dependencies
+└── README.md         # This file
+```
+
+---
+
+## Installation
+
+1. Clone the repository:
    ```bash
-   pip install selenium pandas
+   git clone https://github.com/tr4m0ryp/Whatsapp-Stalker.git
+   cd Whatsapp-Stalker
    ```
-4. **Configure the Script**:
-   - Open the script in a text editor.
-   - Update the `CHROMEDRIVER_PATH` variable with the path to your ChromeDriver executable.
-   - Replace the `CONTACT_NAME` variable with the exact name of the contact you want to monitor.
-5. **Run the Script**:
-   - Launch the script:
-     ```bash
-     python main.py
-     ```
-   - Open WhatsApp Web in Chrome and scan the QR code to log in.
-   - Once logged in, press Enter in the terminal to start monitoring.
-6. **Stop Monitoring**:
-   - Press `Ctrl + C` in the terminal to stop the script.
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Install ChromeDriver:
+   - **macOS**: `brew install chromedriver`
+   - **Linux**: `sudo apt install chromium-chromedriver`
+   - **Windows**: Download from [ChromeDriver downloads](https://chromedriver.chromium.org/downloads)
+
+4. Configure the monitor:
+   ```bash
+   cp config/config.example.py config/config.py
+   # Edit config.py with your contact name
+   ```
+
+---
+
+## Usage
+
+1. Start the monitor:
+   ```bash
+   python src/monitor.py
+   ```
+
+2. Scan the QR code in the browser window
+
+3. Press Enter in the terminal once logged in
+
+4. Monitor will begin tracking status changes
+
+5. Press Ctrl+C to stop monitoring
 
 ---
 
 ## Output
-The script creates a CSV file (`status_log.csv`) in the same directory, containing two columns:
-- **Timestamp**: The date and time of the status change.
-- **Status**: The updated status (e.g., online, typing, offline).
+
+Logs are saved to `logs/status_log_YYYYMMDD_HHMMSS.csv` with columns:
+- Timestamp: Date and time of status change
+- Status: online, typing, recording, offline
 
 ---
 
-## Important Notes
-- **Privacy**: Use this script responsibly. Monitoring someone's activity without consent may violate privacy laws.
-- **Educational Purpose Only**: This tool is intended for learning how to use Selenium and Python automation, not for unethical use.
-- **Limitations**:
-  - The script relies on the structure of WhatsApp Web and may stop working if WhatsApp updates its UI.
-  - The contact must already be visible in your chat list.
+## Configuration
+
+Edit `config/config.py` to customize:
+
+```python
+CONTACT_NAME = "Contact Name"  # Name as shown in WhatsApp
+CHECK_INTERVAL = 5             # Seconds between checks
+LOGS_DIR = "logs"              # Directory for log files
+```
+
+---
+
+## Privacy & Ethics
+
+- Always obtain consent before monitoring contacts
+- Respect WhatsApp's Terms of Service
+- Use responsibly and ethically
+- Do not use for harassment or stalking
 
 ---
 
 ## License
-This project is shared under the MIT License. Please see the `LICENSE` file for details.
+
+MIT License - See LICENSE file for details.
 
 ---
 
 ## Disclaimer
-I did not request this tool and am not responsible for how it’s used. If you have ethical concerns about using it, *don't use it*.
+
+This tool is for educational purposes. The author is not responsible for misuse. Ensure you comply with all applicable laws and regulations.
+
+Repository made by openclaw
